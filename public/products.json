@@ -1,0 +1,66 @@
+[
+    {
+        "_id":1,
+        "img":"https://ibb.co/kgXKWBJ",
+        "name":"",
+        "description": "",
+        "price":"$100",
+        "quantity": "4"
+},
+    {
+        "_id":2,
+        "img":"https://ibb.co/9HYwR5W",
+        "name":"Deepcool-XFAN-120-Cooling-Fan",
+        "description": "",
+        "price":"$345",
+        "quantity": "7"
+},
+    {
+        "_id":3,
+        "img":"https://ibb.co/wzdZYRj",
+        "name":"Acer_CB5-311_series_touchpad-removebg-preview",
+        "description": "",
+        "price":"$290",
+        "quantity": "8"
+},
+    {
+        "_id":4,
+        "img":"https://ibb.co/KFh9Wk7",
+        "name":"Acer_CB5-311_series_touchpad-removebg-preview",
+        "description": "9",
+        "price":"$400",
+        "quantity": ""
+},
+    {
+        "_id":5,
+        "img":"https://ibb.co/k1XyPRD",
+        "name":"Acer_CB5-311_series_touchpad-removebg-preview",
+        "description": "6",
+        "price":"$360",
+        "quantity": ""
+},
+    {
+        "_id":6,
+        "img":"https://ibb.co/7JJPf2h",
+        "name":"Acer_CB5-311_series_touchpad-removebg-preview",
+        "description": "",
+        "price":"$300",
+        "quantity": "6"
+},
+    {
+        "_id":7,
+        "img":"https://ibb.co/pZjm4Wg",
+        "name":"Acer_CB5-311_series_touchpad-removebg-preview",
+        "description": "",
+        "price":"$234",
+        "quantity": "9"
+},
+    {
+        "_id":8,
+        "img":"https://ibb.co/kgXKWBJ",
+        "name":"Acer_CB5-311_series_touchpad-removebg-preview",
+        "description": "",
+        "price":"$210",
+        "quantity": "5"
+}
+]
