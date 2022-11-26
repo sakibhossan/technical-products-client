@@ -4,6 +4,7 @@ import Product from './Product';
 
 
 const Products = () => {
+    const [hardware,setHardware] = useState([];)
     const [products, setProducts] = useState([]);
     
     useEffect(()=>{
