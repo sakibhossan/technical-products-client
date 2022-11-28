@@ -39,7 +39,7 @@ const SignUp = () => {
          navigate('/')
     };
     return (
-        <div class='flex h-screen justify-center items-center'>
+        <div class='flex min-h-2.5 my-10 justify-center items-center'>
         <div class="card w-96 bg-base-100 shadow-xl">
           <div class="card-body">
             <h2 class="text-center text-2xl font-bold">SignUp</h2>

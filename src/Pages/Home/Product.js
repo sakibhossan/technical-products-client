@@ -5,7 +5,7 @@ const Product = (props) => {
     return (
        
       
-           <div class="card  w-full  bg-base-100 shadow-xl">
+           <div class="card sm:max-w-sm md:max-w-md  lg:max-w-lg  bg-base-100 shadow-xl">
         <figure class="px-10 pt-10">
           <img 
           style={{height:'400px', width:'300px'}}

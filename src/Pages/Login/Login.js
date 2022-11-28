@@ -38,8 +38,8 @@ let from = location.state?.from?.pathname || "/";
     signInWithEmailAndPassword(data.email, data.password);
   };
   return (
-    <div class='flex h-screen  justify-center align-items-center'>
-      <div class="card w-96 bg-base-100 shadow-xl">
+    <div class='flex min-h-2.5 my-10  justify-center items-center'>
+      <div class="card sm:max-w-sm  md:max-w-md lg:max-w-lg bg-base-100 shadow-xl">
         <div class="card-body">
           <h2 class="text-center text-2xl font-bold">Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -112,7 +112,7 @@ let from = location.state?.from?.pathname || "/";
 
             <input className="btn w-full max-w-xs text-white" type="submit" value="Login" />
           </form>
-          <p >New to technical products <small> <Link className='text-primary' to ="/signUp">Create New Account</Link></small></p>
+          <p>New to technical products <small> <Link className='text-primary' to ="/signUp">Create New Account</Link></small></p>
           <div class="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
