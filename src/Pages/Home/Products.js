@@ -8,7 +8,7 @@ const Products = () => {
     const [products, setProducts] = useState([]);
     
     useEffect(()=>{
-        fetch('products.json')
+        fetch('https://technical-products-production.up.railway.app/products')
         .then(res =>res.json())
         .then(data => {
             console.log(data);
