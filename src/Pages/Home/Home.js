@@ -1,5 +1,6 @@
 import React from 'react';
 import Products from '../Home/Products';
+import SearchBar from '../SearchBar';
 
 const Home = () => {
     
@@ -7,7 +8,9 @@ const Home = () => {
     return (
         <div className=''>
             <h2>this is home</h2>
+            <SearchBar></SearchBar>
             <Products></Products>
+        
          
             
             
