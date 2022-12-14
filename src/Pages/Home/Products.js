@@ -5,7 +5,7 @@ import Product from './Product';
 
 const Products = () => {
    
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
     const [searchText,setSearchText] = useState('');
     const [searchResult,setSearchResult] = useState([]);
 
@@ -20,7 +20,7 @@ const Products = () => {
         fetch('https://technical-products-production.up.railway.app/products')
         .then(res =>res.json())
         .then(data => {
-            const matchResult = data.filter(d => d.name.toLowerCase().startsWith(searchText.toLowerCase()));
+            const matchResult = data.filter(d => d.name.toLowerCase().includes(searchText.toLowerCase()));
             setSearchResult(matchResult);
             // console.log(data);
             // setProducts(data);
