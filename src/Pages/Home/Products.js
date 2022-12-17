@@ -5,16 +5,11 @@ import Product from './Product';
 
 const Products = () => {
    
-    // const [products, setProducts] = useState([]);
     const [searchText,setSearchText] = useState('');
     const [searchResult,setSearchResult] = useState([]);
 
 
-    // const handleSearchChanges = event =>{
-    //     const searchText = event.target.value;
-    //     const matchResult = products.filter(p => p.name.includes(searchText));
-    //     setSearchResult(matchResult);
-    //   }
+   
     
     useEffect(()=>{
         fetch('https://technical-products-production.up.railway.app/products')
@@ -22,13 +17,15 @@ const Products = () => {
         .then(data => {
             const matchResult = data.filter(d => d.name.toLowerCase().includes(searchText.toLowerCase()));
             setSearchResult(matchResult);
-            // console.log(data);
-            // setProducts(data);
+            
         });
     },[searchText]);
+
  const handleSearchChanges = event =>{
     setSearchText(event.target.value);
  }
+
+
     return (
          <section>
               <div class='py-4 '>
@@ -36,6 +33,9 @@ const Products = () => {
         
 
       </div>
+
+ 
+
              <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-12'>
                
                {

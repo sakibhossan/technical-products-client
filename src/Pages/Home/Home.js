@@ -1,6 +1,6 @@
 import React from 'react';
 import Products from '../Home/Products';
-import SearchBar from '../SearchBar';
+
 
 const Home = () => {
     

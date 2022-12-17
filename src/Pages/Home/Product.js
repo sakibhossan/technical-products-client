@@ -1,7 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Product = (props) => {
     const {_id,name,img,description,price}= props.product;
+    const navigate = useNavigate();
+    const navigateToProductDetail = id =>{
+      navigate(`/product/${id}`);
+    }
     return (
        
       
@@ -16,7 +21,7 @@ const Product = (props) => {
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <p>Price: {price}</p>
           <div class="card-actions">
-            <button class=" btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">Buy Now</button>
+            <button onClick={() =>navigateToProductDetail(_id)} class=" btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">Buy Now</button>
           </div>
         </div>
       </div>
