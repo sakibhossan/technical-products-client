@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useForm } from "react-hook-form"
+import useProducts from '../../hooks/useProducts';
 
 const ProductDetail = () => {
     const {productId} = useParams();
     const [product,setProduct] = useState({});
-    console.log(product)
+    const [products] = useProducts([]);
+        const { register, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
+    const {_id,name,img,description,price}= products;
+    
     useEffect(
         ()=>{
             const url = `http://localhost:5000/products/${productId}`;
@@ -14,18 +20,29 @@ const ProductDetail = () => {
             .then(res => res.json())
             .then(data => {
                 
+                
                 setProduct(data);
             })
         }
         ,[])
     return (
-        <div className='text-center'>
-            <h2>product detail : {product.name}</h2>
-            <div>
-            <Link to='/checkout'><button class="btn btn-accent">Button</button></Link>
-            </div>
+     <section className=' w-96 mx-auto text-center'>
+           
+            {/* <h2>product detail : {product.name}</h2> */}
+             <form style={{width:"500px",}} className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
+      <input className='mt-2' value={name}  style={{border:'2px solid red'}}  {...register("name", { required: true, maxLength: 20 })} />
+      <input className='mt-2'value={price} style={{border:'2px solid red'}} {...register("lastName")} />
+      <input className='mt-2'style={{border:'2px solid red'}} type="number" {...register("age", { min: 18, max: 99 })} />
+      
+    </form>
+           
+           
                 
-        </div>
+        
+         <div className='mt-60'>
+         <Link to='/checkout'><button class="btn btn-accent">Button</button></Link>
+         </div>
+     </section>
     );
 };
 
