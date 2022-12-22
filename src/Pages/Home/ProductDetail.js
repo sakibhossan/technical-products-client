@@ -26,7 +26,7 @@ const ProductDetail = () => {
         }
         ,[])
     return (
-     <section className='w-96  mx-auto text-center'>
+     <section className=''>
            
             {/* <h2>product detail : {product.name}</h2> */}
              <form style={{width:"500px",}} className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
