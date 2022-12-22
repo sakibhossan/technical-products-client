@@ -26,22 +26,30 @@ const ProductDetail = () => {
         }
         ,[])
     return (
-     <section className=' w-96 mx-auto text-center'>
+     <section className='w-96  mx-auto text-center'>
            
             {/* <h2>product detail : {product.name}</h2> */}
              <form style={{width:"500px",}} className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
-      <input className='mt-2' value={name}  style={{border:'2px solid red'}}  {...register("name", { required: true, maxLength: 20 })} />
-      <input className='mt-2'value={price} style={{border:'2px solid red'}} {...register("lastName")} />
-      <input className='mt-2'style={{border:'2px solid red'}} type="number" {...register("age", { min: 18, max: 99 })} />
+
+             <input className='mt-2 mx-auto' src={img} style={{border:'2px solid red',height:'400px',width:'400px'}} type="image" alt='' {...register("image" )} />
+
+     
+     <textarea className='mt-2  text-lg mx-auto w-48 md:w-96 lg:w-96' value={name}  style={{border:'2px solid green'}}  {...register("name", { required: true, maxLength: 20 })} />
+
+    
+      <input className='mt-2 mx-auto w-16 md:w-48 lg:w-48'value={price} style={{border:'2px solid red'}} {...register("lastName")} />
+      
+      
+      
       
     </form>
            
            
                 
         
-         <div className='mt-60'>
+         {/* <div className='mt-60'>
          <Link to='/checkout'><button class="btn btn-accent">Button</button></Link>
-         </div>
+         </div> */}
      </section>
     );
 };

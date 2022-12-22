@@ -29,7 +29,7 @@ const Products = () => {
     return (
          <section>
               <div class='py-4 '>
-        <input onChange={handleSearchChanges}  type="text" placeholder="Type here" class="input input-bordered input-success w-full block mx-auto max-w-xs" />
+        <input onChange={handleSearchChanges}  type="text" placeholder="Search for anything..." class="input input-bordered input-success w-full block mx-auto max-w-xs" />
         
 
       </div>
