@@ -29,15 +29,15 @@ const ProductDetail = () => {
      <section className=''>
            
             {/* <h2>product detail : {product.name}</h2> */}
-             <form style={{width:"500px",}} className='flex flex-col mx-auto' onSubmit={handleSubmit(onSubmit)}>
+             <form  className='w-96 flex flex-col mx-auto justify-items-center' onSubmit={handleSubmit(onSubmit)}>
 
-             <input className='mt-2 mx-auto w-60 md:w-80 lg:w-96 rounded ring ring-lime-500' src={img} style={{border:'2px solid red',height:'400px'}} type="image" alt='' {...register("image" )} />
+             <input className='mt-2  w-60 md:w-80 lg:w-96 rounded ring ring-lime-500' src={img} style={{border:'2px solid red',height:'400px'}} type="image" alt='' {...register("image" )} />
 
      
-     <textarea className='mt-2  text-lg mx-auto w-48 md:w-56  lg:w-96 h-24 rounded' value={name}  style={{border:'2px solid green'}}  {...register("name", { required: true, maxLength: 20 })} />
+     <textarea className='mt-2  text-lg  w-48 md:w-56  lg:w-96 h-24 rounded' value={name}  style={{border:'2px solid green'}}  {...register("name", { required: true, maxLength: 20 })} />
 
     
-      <input className='mt-2 pl-4 mx-auto w-16 md:w-48 lg:w-48 text-lg text-blue-500 rounded ring ring-green-500'value={price} style={{border:'2px solid red'}} {...register("lastName")} />
+      <input className='mt-2 pl-4  w-16 md:w-48 lg:w-48 text-lg text-blue-500 rounded ring ring-green-500'value={price} style={{border:'2px solid red'}} {...register("lastName")} />
       
       
       
