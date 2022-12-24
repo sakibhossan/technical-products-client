@@ -6,8 +6,7 @@ import useProducts from '../../hooks/useProducts';
 
 const ProductDetail = () => {
     const {productId} = useParams();
-    const [product,setProduct] = useState({});
-    const [products] = useProducts([]);
+    const [products,setProducts] = useProducts();
         const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
     const {_id,name,img,description,price}= products;
@@ -21,7 +20,7 @@ const ProductDetail = () => {
             .then(data => {
                 
                 
-                setProduct(data);
+                setProducts(data);
             })
         }
         ,[])
@@ -40,7 +39,7 @@ const ProductDetail = () => {
       <input className='mt-2 pl-6 lg:px-16 lg:mx-24 lg:w-48  text-lg text-blue-500 rounded ring ring-green-500'value={price} style={{border:'2px solid red'}} {...register("lastName")} />
       
       
-      <Link to='/checkout'><button class="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... lg:mx-24 lg:w-48 mt-6 text-black">Place Order</button></Link> 
+      <Link to='/manage'><button class="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... lg:mx-24 lg:w-48 mt-6 text-black">Place Order</button></Link> 
       
     </form>
            
