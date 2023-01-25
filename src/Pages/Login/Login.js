@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
+  const emailRef = useRef('');
+  const passwordRef = useRef('');
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [
@@ -15,7 +19,8 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
+  const [token] = useToken(user||googleUser);
 
 let signInErrorMessage;
 let from = location.state?.from?.pathname || "/";
@@ -28,14 +33,24 @@ let from = location.state?.from?.pathname || "/";
     signInErrorMessage = <p className='text-red-500'><small>{error?.message || googleError?.message}</small></p>
   }
 
-  if (user||googleUser) {
+  if (token) {
    
     navigate(from, {replace: true});
     
   }
-  const onSubmit = (data) => {
-    console.log(data);
-    signInWithEmailAndPassword(data.email, data.password);
+  const onSubmit =async(data) => {
+  //   event.preventDefault();
+  //  const email = emailRef.current.value;
+  //  const password = passwordRef.current.value;
+
+    // console.log(data);
+
+  //  await signInWithEmailAndPassword(email,password);
+   await signInWithEmailAndPassword(data.email,data.password);
+// const {user} = await axios.post('http://localhost:5000/token',{email});
+// console.log(user);
+
+
   };
   return (
     <div class='flex min-h-2.5 my-10  justify-center items-center'>
@@ -52,12 +67,16 @@ let from = location.state?.from?.pathname || "/";
                
               </label>
               <input 
+              ref={emailRef}
               type="email" 
+              
+             
               placeholder="Your Email" 
               class="input input-bordered w-full max-w-xs" 
               {...register("email",   {
                 required:{
                   value: true,
+                  
                   message:'Email is Required'
                 },
                 pattern: {
@@ -83,6 +102,7 @@ let from = location.state?.from?.pathname || "/";
               </label>
               <input 
               type="password" 
+              ref={passwordRef}
               placeholder="password" 
               class="input input-bordered w-full max-w-xs" 
               {...register("password",   {

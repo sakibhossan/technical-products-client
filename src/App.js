@@ -11,6 +11,7 @@ import NotFound from './Pages/Shared/NotFound';
 import CheckOut from './Pages/Home/CheckOut';
 import Navbar from './Pages/Navbar/Navbar';
 import ManageProduct from './Pages/Home/ManageProduct';
+import AddItem from './Pages/Home/AddItem/AddItem';
 
 
 
@@ -27,9 +28,21 @@ function App() {
           </RequireAuth>
 
         }></Route>
+        <Route path='/manage/:productId' element={
+          <RequireAuth>
+            <ManageProduct/>
+          </RequireAuth>
+
+        }></Route>
+        <Route path='/additem' element={
+          <RequireAuth>
+            <AddItem/>
+          </RequireAuth>
+
+        }></Route>
         <Route path='/checkout' element={<CheckOut></CheckOut>}></Route>
-        <Route path='/manage' element={<ManageProduct/>}></Route>
-        <Route path='/product/:productId' element={<ProductDetail></ProductDetail>}></Route>
+        
+        <Route path='/products/:productId' element={<ProductDetail></ProductDetail>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signUp' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>

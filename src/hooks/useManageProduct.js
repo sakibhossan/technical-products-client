@@ -4,7 +4,7 @@ import { useState } from "react"
 const useManageProduct= ()=>{
     const [product,setProduct]= useState([]);
     useEffect(() =>{
-        fetch('https://technical-products-production.up.railway.app/products')
+    fetch('http://localhost:5000/products/')
         .then(res =>res.json())
         .then(data =>{
             console.log(data);

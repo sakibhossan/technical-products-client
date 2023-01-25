@@ -6,25 +6,31 @@ import useProducts from '../../hooks/useProducts';
 
 const ProductDetail = () => {
     const {productId} = useParams();
-    const [products,setProducts] = useProducts();
+    const [products,setProducts] = useProducts(productId);
+    // const [products,setProducts] = useProducts();
+    // const [products,setProducts] = useState([]);
         const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
     const {_id,name,img,description,price}= products;
     
-    useEffect(
-        ()=>{
-            const url = `http://localhost:5000/products/${productId}`;
+    // useEffect(
+    //     ()=>{
+    //         const url = `http://localhost:5000/products/${productId}`;
             
-            fetch(url)
-            .then(res => res.json())
-            .then(data => {
+    //         fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => {
                 
                 
-                setProducts(data);
-            })
-        }
-        ,[])
+    //             setProducts(data);
+    //         })
+    //     }
+    //     ,[])
     return (
+        // <div>
+        //     <h2>{products.name}</h2>
+        // </div>
+
      <div className='mt-4 ' >
            
             {/* <h2>product detail : {product.name}</h2> */}
@@ -39,7 +45,7 @@ const ProductDetail = () => {
       <input className='mt-2 pl-6 lg:px-16 lg:mx-24 lg:w-48  text-lg text-blue-500 rounded ring ring-green-500'value={price} style={{border:'2px solid red'}} {...register("lastName")} />
       
       
-      <Link to='/manage'><button class="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... lg:mx-24 lg:w-48 mt-6 text-black">Place Order</button></Link> 
+      <Link to={`/manage/${productId}`}><button class="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... lg:mx-24 lg:w-48 mt-6 text-black">Place Order</button></Link> 
       
     </form>
            

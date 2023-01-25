@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 import { useState } from "react"
-import { useParams } from "react-router-dom";
 
 
-const useProducts = () =>{
-    const {productId} = useParams();
-    const [products,setProducts] = useState([]);
+
+const useProducts =(productId) =>{
+    // const {productId} = useParams();
+    const [products,setProducts] = useState({});
     useEffect(()=>{
-        fetch(`https://technical-products-production.up.railway.app/products/${productId}`)
+        fetch(`http://localhost:5000/products/${productId}`)
         .then (res =>res.json())
         .then(data=>setProducts(data));
-    },[]);
+    },[productId]);
     return [products,setProducts];
 
 }
