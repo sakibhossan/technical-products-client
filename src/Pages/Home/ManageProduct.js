@@ -1,7 +1,9 @@
 import React from 'react';
 import useManageProduct from '../../hooks/useManageProduct';
 
+
 const ManageProduct = () => {
+    
     const [product, setProduct] = useManageProduct();
      const deleteProduct =id =>{
         console.log(id);

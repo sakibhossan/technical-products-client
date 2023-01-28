@@ -28,7 +28,7 @@ function App() {
           </RequireAuth>
 
         }></Route>
-        <Route path='/manage/:productId' element={
+        <Route path='/manageitem' element={
           <RequireAuth>
             <ManageProduct/>
           </RequireAuth>
@@ -40,7 +40,7 @@ function App() {
           </RequireAuth>
 
         }></Route>
-        <Route path='/checkout' element={<CheckOut></CheckOut>}></Route>
+        <Route path='/checkout/:productId' element={<CheckOut></CheckOut>}></Route>
         
         <Route path='/products/:productId' element={<ProductDetail></ProductDetail>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

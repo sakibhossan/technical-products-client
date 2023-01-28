@@ -24,7 +24,7 @@ const Navbar = () => {
            <li>{user ? <button class="btn btn-ghost"
            onClick={logOut}
            >SignOut</button> :<Link to='/login'>Login</Link>}</li>
-            {/* <li><Link to='/register'>Register</Link></li> */}
+            
 
     </>
     return (

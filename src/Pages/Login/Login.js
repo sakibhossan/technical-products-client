@@ -4,7 +4,6 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import useToken from '../../hooks/useToken';
 
 const Login = () => {
