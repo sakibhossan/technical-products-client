@@ -6,15 +6,22 @@ import auth from '../../firebase.init';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { DayPicker } from 'react-day-picker';
+import 'react-day-picker/dist/style.css';
+import { useState } from 'react';
+import { format } from 'date-fns';
 
 const CheckOut = () => {
     const {productId} = useParams();
     const [products] = useProducts(productId);
     const [user] = useAuthState(auth);
+    const [date, setDate]= useState(new Date());
+    const formattedDate = format(date, 'PP');
 
     const handleOrder=(event)=>{
         event.preventDefault();
         const order = {
+            date:formattedDate,
             email:user.email,
             product: products.name,
             productId: productId,
@@ -41,6 +48,8 @@ const CheckOut = () => {
            <div className='w-50 mx-auto'>
         <h2>Your choice Order</h2>
         <form onSubmit={handleOrder}>
+            <input className='w-100 mb-3' value={formattedDate} type="text" name="name" required readOnly disabled/>
+            <br />
             <input className='w-100 mb-3' value={user?.displayName} type="text" name="name" placeholder='Your order name' required readOnly disabled/>
             <br />
             <input className='w-100 mb-3' value={user?.email} type="email" name="email" placeholder='Your email'  required readOnly  />
@@ -55,7 +64,16 @@ const CheckOut = () => {
         </form>
        <ToastContainer></ToastContainer>
     </div>
-    <div></div>
+    <div>
+    <DayPicker 
+    mode="single"
+    selected={date}
+    onSelect={setDate}
+    />
+    <p>You have selected: {format(date,'PP')}</p>
+
+
+    </div>
      </section>
     );
 };
