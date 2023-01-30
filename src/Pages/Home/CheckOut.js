@@ -31,10 +31,18 @@ const CheckOut = () => {
         axios.post('http://localhost:5000/collectOrder',order)
         .then(res=>{
             const {data} = res;
-            if(data.insertedId){
+            console.log(data);
+            if(data.success){
+                toast(`appointent is set,${formattedDate}`)
+            }
+
+            else if(data.insertedId){
                 toast('Your order is booked');
                 
                 event.target.reset();
+            }
+            else{
+                toast.error(`appointent is set,${data.order?.date}`);
             }
             
 

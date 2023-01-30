@@ -12,6 +12,7 @@ import CheckOut from './Pages/Home/CheckOut';
 import Navbar from './Pages/Navbar/Navbar';
 import ManageProduct from './Pages/Home/ManageProduct';
 import AddItem from './Pages/Home/AddItem/AddItem';
+import MyItem from './Pages/Home/MyItem';
 
 
 
@@ -25,6 +26,12 @@ function App() {
         <Route path='/about' element={
           <RequireAuth>
             <About></About>
+          </RequireAuth>
+
+        }></Route>
+        <Route path='/myItem' element={
+          <RequireAuth>
+            <MyItem/>
           </RequireAuth>
 
         }></Route>
