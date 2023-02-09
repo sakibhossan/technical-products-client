@@ -11,7 +11,7 @@ import 'react-day-picker/dist/style.css';
 import { useState } from 'react';
 import { format } from 'date-fns';
 
-const CheckOut = () => {
+const CheckOut = (props) => {
     const {productId} = useParams();
     const [products] = useProducts(productId);
     const [user] = useAuthState(auth);
@@ -25,6 +25,7 @@ const CheckOut = () => {
             email:user.email,
             product: products.name,
             productId: productId,
+            price:products.price,
             address: event.target.address.value,
             phone:event.target.phone.value
         }
@@ -62,7 +63,9 @@ const CheckOut = () => {
             <br />
             <input className='w-100 mb-3' value={user?.email} type="email" name="email" placeholder='Your email'  required readOnly  />
             <br />
-            <input className='w-100 mb-3' value={products.name} type="product" name="Product" placeholder='Your order name' required  readOnly/>
+            <input className='w-100 mb-3' value={products.name} type="text" name="Product" placeholder='Your order name' required  readOnly/>
+            <br />
+            <input className='w-100 mb-3' value={products.price} type="text" name="Price"required  readOnly/>
             <br />
             <input className='w-100 mb-3' type="address" name="address" placeholder='Your Address'  required  />
             <br />

@@ -13,6 +13,7 @@ import Navbar from './Pages/Navbar/Navbar';
 import ManageProduct from './Pages/Home/ManageProduct';
 import AddItem from './Pages/Home/AddItem/AddItem';
 import MyItem from './Pages/Home/MyItem';
+import Payment from './Pages/Home/Payment';
 
 
 
@@ -35,6 +36,12 @@ function App() {
           </RequireAuth>
 
         }></Route>
+        <Route path='/payment/:id' element={
+          <RequireAuth>
+           <Payment></Payment>
+          </RequireAuth>
+
+        }></Route>
         <Route path='/manageitem' element={
           <RequireAuth>
             <ManageProduct/>
@@ -47,9 +54,13 @@ function App() {
           </RequireAuth>
 
         }></Route>
-        <Route path='/checkout/:productId' element={<CheckOut></CheckOut>}></Route>
+        <Route path='/checkout/:productId' element={
+          <RequireAuth><CheckOut></CheckOut></RequireAuth>
+        }></Route>
         
-        <Route path='/products/:productId' element={<ProductDetail></ProductDetail>}></Route>
+        <Route path='/products/:productId' element={<RequireAuth>
+          <ProductDetail></ProductDetail>
+        </RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signUp' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>

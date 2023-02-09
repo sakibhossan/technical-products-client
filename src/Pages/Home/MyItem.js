@@ -2,11 +2,13 @@ import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyItem = () => {
     const [user] = useAuthState(auth)
     const [myItem, setMyItem] = useState([]);
+   
     
 
    
@@ -14,7 +16,11 @@ const MyItem = () => {
 const getOrders = async()=>{
     const email = user.email;
     console.log(email)
-   await axios.get(`http://localhost:5000/collectOrder?email=${email}`)
+   await axios.get(`http://localhost:5000/collectOrder?email=${email}`,{
+    headers:{
+        authorization: `Bearer ${localStorage.getItem('acessToken')}`
+    }
+   })
     .then(data => {
         console.log(data?.data);
        
@@ -45,9 +51,10 @@ getOrders();
                 myItem?.map(order => <div
                     key={order._id}
                 >
-                    <h2>{order.product}</h2><button onClick={()=>{
+                    <h2>{order.product}</h2><p>Price:{order.price}</p><h2>date:{order.date}</h2><button onClick={()=>{
                     deleteProduct(order._id)
                     }}>Delete</button>
+                    <h2>{order.price && <Link to={`/payment/${order._id}`}><button>Payment</button></Link>}</h2>
                 </div>)
             }
         </div>
