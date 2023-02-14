@@ -1,18 +1,21 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading';
 
 const CheckoutForm = ({data}) => {
     const stripe = useStripe();
     const elements = useElements();
+    // const [user] = useAuthState();
+    // console.log(user);
   const [cardError,setCardError] = useState('');
   const [success,setSuccess] = useState('');
+  const [loading,setLoading] = useState(false);
   const [transactionId,setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState("");
-    const [loading, setLoading] = useState(false);
-    const {price,email,product
-     }= data;
+    
+    const {_id,price,email,product,date}= data;
     
     useEffect(() => {
        
@@ -49,7 +52,8 @@ const CheckoutForm = ({data}) => {
         
          
           setCardError(error?.message || '' );
-          setSuccess('')
+          setSuccess('');
+          setLoading(true);
 
         
       
@@ -77,6 +81,27 @@ const CheckoutForm = ({data}) => {
                 setCardError('');
                 setTransactionId(paymentIntent.id);
                 setSuccess('congrats');
+                // store payment on database
+                const payment ={
+                  date:date,
+                  email:email,
+                  product: _id,
+                  productName:product,
+                  price:price,
+                  transactionId:paymentIntent.id,
+                  
+                }
+                fetch(`http://localhost:5000/collectOrder/${_id}`,{
+                  method: 'PATCH',
+                  headers:{
+                    "content-type": "application/json",
+                    'authorization': `Bearer ${localStorage.getItem('acessToken')}` 
+                  },
+                  body:JSON.stringify(payment)
+                }).then(res =>res.json())
+                .then(data =>{
+                  setLoading(false);
+                  console.log(data) ;               })
               } 
                }
     return (

@@ -54,7 +54,11 @@ getOrders();
                     <h2>{order.product}</h2><p>Price:{order.price}</p><h2>date:{order.date}</h2><button onClick={()=>{
                     deleteProduct(order._id)
                     }}>Delete</button>
-                    <h2>{order.price && <Link to={`/payment/${order._id}`}><button>Payment</button></Link>}</h2>
+                    <h2>{(order.price && !order.paid) && <Link to={`/payment/${order._id}`}><button> Please Pay</button></Link>}
+                    
+                    {(order.price && order.paid) && <span>Paid</span>}
+                    
+                    </h2>
                 </div>)
             }
         </div>
