@@ -1,6 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
@@ -19,6 +19,10 @@ const Navbar = () => {
         <li><Link to='/myItem'>MyItem</Link></li>
         <li><Link to='/additem'>Add Items</Link></li>
         <li><Link to='/manageitem'>Manage Itmes</Link></li>
+        <li><Link to='/about'>About</Link></li>
+        <li>{
+            user && <Link to='/dashboard'>Dashboard</Link>
+            }</li>
         <li><Link to='/about'>About</Link></li>
         <li><Link to='/myprofile'>My Profile</Link></li>
            <li>{user ? <button class="btn btn-ghost"
@@ -50,6 +54,12 @@ const Navbar = () => {
 
                 </ul>
             </div>
+           <div className="navbar-end">
+           <label  tabIndex="1" for="dahboard-sidebar" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
+           </div>
+           
            
            
         </div>

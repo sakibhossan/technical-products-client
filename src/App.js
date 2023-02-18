@@ -14,6 +14,10 @@ import ManageProduct from './Pages/Home/ManageProduct';
 import AddItem from './Pages/Home/AddItem/AddItem';
 import MyItem from './Pages/Home/MyItem';
 import Payment from './Pages/Home/Payment';
+import Dashboard from './Pages/Home/Dashboard';
+import MyAppointments from './Pages/Home/MyAppointments';
+import MyReview from './Pages/Home/MyReview';
+import Allusers from './Pages/Home/Allusers';
 
 
 
@@ -54,6 +58,18 @@ function App() {
           </RequireAuth>
 
         }></Route>
+        <Route path='/dashboard' element={
+          <RequireAuth>
+            <Dashboard/>
+          </RequireAuth>
+
+        }>
+
+ <Route index element={<MyAppointments></MyAppointments>}></Route>
+ <Route path='review' element={<MyReview></MyReview>}></Route>
+ <Route path='users' element={<Allusers></Allusers>}></Route>
+
+        </Route>
         <Route path='/checkout/:productId' element={
           <RequireAuth><CheckOut></CheckOut></RequireAuth>
         }></Route>
