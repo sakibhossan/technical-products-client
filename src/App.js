@@ -18,6 +18,7 @@ import Dashboard from './Pages/Home/Dashboard';
 import MyAppointments from './Pages/Home/MyAppointments';
 import MyReview from './Pages/Home/MyReview';
 import Allusers from './Pages/Home/Allusers';
+import RequirAdmin from './Pages/Login/RequireAdmin';
 
 
 
@@ -67,7 +68,9 @@ function App() {
 
  <Route index element={<MyAppointments></MyAppointments>}></Route>
  <Route path='review' element={<MyReview></MyReview>}></Route>
- <Route path='users' element={<Allusers></Allusers>}></Route>
+ <Route path='users' element={<RequirAdmin>
+  <Allusers></Allusers>
+ </RequirAdmin>}></Route>
 
         </Route>
         <Route path='/checkout/:productId' element={

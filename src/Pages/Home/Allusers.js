@@ -31,7 +31,7 @@ const Allusers = () => {
             users.map((row,index) =><AllUserRow
             key={row._id}
             row={row}
-            refetc={refetch}
+            refetch={refetch}
             // index={index}
             ></AllUserRow>)
          }
