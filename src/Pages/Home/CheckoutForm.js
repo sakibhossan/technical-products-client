@@ -1,14 +1,12 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import Loading from '../Shared/Loading';
+
 
 const CheckoutForm = ({data}) => {
     const stripe = useStripe();
     const elements = useElements();
-    // const [user] = useAuthState();
-    // console.log(user);
+   
   const [cardError,setCardError] = useState('');
   const [success,setSuccess] = useState('');
   const [loading,setLoading] = useState(false);
@@ -19,7 +17,7 @@ const CheckoutForm = ({data}) => {
     
     useEffect(() => {
        
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://technical-backend-code.vercel.app/create-payment-intent", {
           method: "POST",
           headers: { 
             "content-type": "application/json",
@@ -91,7 +89,7 @@ const CheckoutForm = ({data}) => {
                   transactionId:paymentIntent.id,
                   
                 }
-                fetch(`http://localhost:5000/collectOrder/${_id}`,{
+                fetch(`https://technical-backend-code.vercel.app/collectOrder/${_id}`,{
                   method: 'PATCH',
                   headers:{
                     "content-type": "application/json",

@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useForm } from "react-hook-form";
+import Loading from '../../Shared/Loading';
 
 const AddItem = () => {
     const { register, handleSubmit } = useForm();
+    
     const onSubmit = data => {
 
         console.log(data);
-        const url =`http://localhost:5000/products/`;
+        const url =`https://technical-backend-code.vercel.app/products/`;
         fetch(url,{
             method: 'POST',
         headers: {
@@ -17,7 +19,8 @@ const AddItem = () => {
         })
         .then(res => res.json())
         .then(result => {
-            console.log(result)
+            console.log(result);
+           
         })
         };
     return (

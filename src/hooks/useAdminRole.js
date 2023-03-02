@@ -8,7 +8,7 @@ const useAdminRole = (user) => {
     useEffect(() =>{
         const email = user?.email;
         if(email){
-            fetch(`http://localhost:5000/admin/${email}`,{
+            fetch(`https://technical-backend-code.vercel.app/admin/${email}`,{
                 method:'GET',
                 headers:{
                     'content-type':'application/json',

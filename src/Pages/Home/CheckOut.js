@@ -29,7 +29,7 @@ const CheckOut = (props) => {
             address: event.target.address.value,
             phone:event.target.phone.value
         }
-        axios.post('http://localhost:5000/collectOrder',order)
+        axios.post('https://technical-backend-code.vercel.app/collectOrder',order)
         .then(res=>{
             const {data} = res;
             console.log(data);

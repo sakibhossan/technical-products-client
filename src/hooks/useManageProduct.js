@@ -4,7 +4,7 @@ import { useState } from "react"
 const useManageProduct= ()=>{
     const [product,setProduct]= useState([]);
     useEffect(() =>{
-    fetch('http://localhost:5000/products/')
+    fetch('https://technical-backend-code.vercel.app/products/')
         .then(res =>res.json())
         .then(data =>{
             console.log(data);

@@ -5,7 +5,7 @@ import { useState } from 'react';
 const MyAppointments = () => {
     const [appoinment, setAppoinment] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/payment')
+        fetch('https://technical-backend-code.vercel.app/payment')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

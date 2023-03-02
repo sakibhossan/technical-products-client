@@ -12,7 +12,7 @@ const stripePromise = loadStripe('pk_test_51LoSWADtzvuTa9q7UVng6yVvrpKTQWKYuAWsT
 const Payment = () => {
         const {id} = useParams();
        
-        const url = `http://localhost:5000/collectOrder/${id}`
+        const url = `https://technical-backend-code.vercel.app/collectOrder/${id}`
         const {data,isLoading} = useQuery(['collectOrder',id],() => fetch(url,{
             method: 'GET',
             headers:{

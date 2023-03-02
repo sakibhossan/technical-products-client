@@ -15,7 +15,7 @@ const Products = () => {
    
     
     useEffect(()=>{
-        fetch('http://localhost:5000/products/')
+        fetch('https://technical-backend-code.vercel.app/products/')
         .then(res =>res.json())
         .then(data => {
             const matchResult = data.filter(d => d.name.toLowerCase().includes(searchText.toLowerCase()));

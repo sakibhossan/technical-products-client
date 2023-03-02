@@ -7,7 +7,7 @@ const useProducts =(productId) =>{
     // const {productId} = useParams();
     const [products,setProducts] = useState({});
     useEffect(()=>{
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://technical-backend-code.vercel.app/products/${productId}`)
         .then (res =>res.json())
         .then(data=>setProducts(data));
     },[productId]);
