@@ -9,33 +9,60 @@ import Loading from '../Shared/Loading';
 
 const MyItem = () => {
     const [user] = useAuthState(auth)
-   const [myItem, setMyItem] = useState([]);
-    
+    const [myItem, setMyItem] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-  
 
-useEffect(()=>{
-    const getOrders = async () => {
-        const email = user.email;
-        console.log(email)
-        await axios.get(`https://technical-backend-code.vercel.app/collectOrder?email=${email}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('acessToken')}`
+
+    // const url= `https://technical-backend-code.vercel.app/collectOrder?email=${email}`;
+
+    // useEffect(()=>{
+    //     const getOrders = async () => {
+    //         const email = user.email;
+    //         console.log(email)
+    //         await axios.get(`https://technical-backend-code.vercel.app/collectOrder?email=${email}`, {
+    //             headers: {
+    //                 authorization: `Bearer ${localStorage.getItem('acessToken')}`
+    //             }
+    //         })
+    //             .then(data => {
+
+    //                 setMyItem(data?.data);
+
+
+
+    //  });
+    //  }
+    //     getOrders();
+
+
+
+    // },[])
+
+    useEffect(() => {
+        setLoading(true);
+        const getOrders = async () => {
+            try {
+                const email = user.email;
+                const url = `https://technical-backend-code.vercel.app/collectOrder?email=${email}`;
+                const config = {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('acessToken')}`
+                    }
+
+                }
+                const res = await axios.get(url, config);
+             setMyItem(res.data);
+                setLoading(false);
+            } 
+            catch (error) {
+                console.log(error);
+                setLoading(false);
             }
-        })
-            .then(data => {
-                 
-                setMyItem(data?.data);
-                
-                
-                
- });
- }
-    getOrders();
-    
-   
 
-},[])
+        }
+        getOrders();
+    }, [user])
 
 
 
@@ -47,13 +74,16 @@ useEffect(()=>{
                     // console.log(data?.data);
                     const remain = myItem?.filter(order => order._id !== id);
                     setMyItem(remain);
-                    
+
 
                 })
         }
-      
+
     }
-  
+    if(loading){
+        return <Loading></Loading>
+    }
+
 
     return (
         <div>
@@ -74,17 +104,17 @@ useEffect(()=>{
             }
         </div>
         // ------------------------//
-//         <div>
-//             <div class="card w-96 bg-paith text-primary-content">
-//   <div class="card-body">
-//     <h2 class="card-title">Card title!</h2>
-//     <p>If a dog chews shoes whose shoes does he choose?</p>
-//     <div class="card-actions justify-end">
-//       <button class="btn">Buy Now</button>
-//     </div>
-//   </div>
-// </div>
-//         </div>
+        //         <div>
+        //             <div class="card w-96 bg-paith text-primary-content">
+        //   <div class="card-body">
+        //     <h2 class="card-title">Card title!</h2>
+        //     <p>If a dog chews shoes whose shoes does he choose?</p>
+        //     <div class="card-actions justify-end">
+        //       <button class="btn">Buy Now</button>
+        //     </div>
+        //   </div>
+        // </div>
+        //         </div>
     );
 };
 

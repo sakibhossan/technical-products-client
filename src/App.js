@@ -19,12 +19,27 @@ import MyAppointments from './Pages/Home/MyAppointments';
 import MyReview from './Pages/Home/MyReview';
 import Allusers from './Pages/Home/Allusers';
 import RequirAdmin from './Pages/Login/RequireAdmin';
+import { useState } from 'react';
+import Loading from './Pages/Shared/Loading';
+import { useEffect } from 'react';
 
 
 
 function App() {
+  const [loading,setLoading] = useState(true);
+  useEffect(()=>{
+    
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
+  },[])
   return (
-    <div>
+    <>
+    {
+      loading ?
+      <Loading></Loading>
+      :
+      <div>
       <Navbar></Navbar>
       
       <Routes>
@@ -88,6 +103,8 @@ function App() {
 
 
     </div>
+    }
+    </>
   );
 }
 
