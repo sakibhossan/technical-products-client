@@ -1,12 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
-
+import Loading from '../Shared/Loading';
 
 const Products = () => {
    
     const [searchText,setSearchText] = useState('');
     const [searchResult,setSearchResult] = useState([]);
+    const [loading, setLoading]= useState(true);
     
     
    
@@ -20,6 +21,7 @@ const Products = () => {
         .then(data => {
             const matchResult = data.filter(d => d.name.toLowerCase().includes(searchText.toLowerCase()));
             setSearchResult(matchResult);
+            setLoading(false);
            
             
             
@@ -28,7 +30,9 @@ const Products = () => {
         });
     },[searchText ]);
     //
-    
+    if(loading){
+    return <Loading></Loading>
+    }
 
  const handleSearchChanges = event =>{
     setSearchText(event.target.value);

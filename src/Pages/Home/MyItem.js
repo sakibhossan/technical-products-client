@@ -10,11 +10,9 @@ import Loading from '../Shared/Loading';
 const MyItem = () => {
     const [user] = useAuthState(auth)
    const [myItem, setMyItem] = useState([]);
-    const [loading, setLoading] = useState(false);
+    
 
-    if (loading) {
-        <Loading></Loading>
-    }
+  
 
 useEffect(()=>{
     const getOrders = async () => {
@@ -28,12 +26,18 @@ useEffect(()=>{
             .then(data => {
                  
                 setMyItem(data?.data);
-                setLoading(true);
+                
+                
+                
  });
  }
     getOrders();
+    
+   
 
 },[])
+
+
 
     const deleteProduct = id => {
         const proceed = window.confirm("Are your sure deliverd this product");
@@ -43,11 +47,13 @@ useEffect(()=>{
                     // console.log(data?.data);
                     const remain = myItem?.filter(order => order._id !== id);
                     setMyItem(remain);
-                    setLoading(true);
+                    
 
                 })
         }
+      
     }
+  
 
     return (
         <div>

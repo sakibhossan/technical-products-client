@@ -6,6 +6,7 @@ import Loading from '../../Shared/Loading';
 const AddItem = () => {
     const { register, handleSubmit } = useForm();
     
+    
     const onSubmit = data => {
 
         console.log(data);
@@ -20,9 +21,11 @@ const AddItem = () => {
         .then(res => res.json())
         .then(result => {
             console.log(result);
+            
            
         })
         };
+       
     return (
         <div className='w-50 flex mx-auto'>
         <h2>this is add service</h2>
