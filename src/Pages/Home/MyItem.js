@@ -14,30 +14,6 @@ const MyItem = () => {
 
 
 
-    // const url= `https://technical-backend-code.vercel.app/collectOrder?email=${email}`;
-
-    // useEffect(()=>{
-    //     const getOrders = async () => {
-    //         const email = user.email;
-    //         console.log(email)
-    //         await axios.get(`https://technical-backend-code.vercel.app/collectOrder?email=${email}`, {
-    //             headers: {
-    //                 authorization: `Bearer ${localStorage.getItem('acessToken')}`
-    //             }
-    //         })
-    //             .then(data => {
-
-    //                 setMyItem(data?.data);
-
-
-
-    //  });
-    //  }
-    //     getOrders();
-
-
-
-    // },[])
 
     useEffect(() => {
         setLoading(true);
