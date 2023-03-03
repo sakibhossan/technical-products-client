@@ -39,16 +39,9 @@ let from = location.state?.from?.pathname || "/";
     
   }
   const onSubmit =async(data) => {
-  //   event.preventDefault();
-  //  const email = emailRef.current.value;
-  //  const password = passwordRef.current.value;
-
-    // console.log(data);
-
-  //  await signInWithEmailAndPassword(email,password);
+  
    await signInWithEmailAndPassword(data.email,data.password);
-// const {user} = await axios.post('http://localhost:5000/token',{email});
-// console.log(user);
+
 
 
   };

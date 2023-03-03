@@ -4,7 +4,7 @@ import { useState } from "react"
 
 
 const useProducts =(productId) =>{
-    // const {productId} = useParams();
+    
     const [products,setProducts] = useState({});
     useEffect(()=>{
         fetch(`https://technical-backend-code.vercel.app/products/${productId}`)
