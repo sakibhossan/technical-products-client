@@ -6,9 +6,10 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+import ShowMyItem from './ShowMyItem';
 
 const MyItem = () => {
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
     const [myItem, setMyItem] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -62,35 +63,37 @@ const MyItem = () => {
 
 
     return (
-        <div>
-            {
+        // <div>
+        //     {
 
-                myItem?.map(order => <div
-                    key={order._id}
-                >
-                    <h2>{order.product}</h2><p>Price:{order.price}</p><h2>date:{order.date}</h2><button onClick={() => {
-                        deleteProduct(order._id)
-                    }}>Delete</button>
-                    <h2>{(order.price && !order.paid) && <Link to={`/payment/${order._id}`}><button> Please Pay</button></Link>}
+        //         myItem?.map(order => <div
+        //             key={order._id}
+        //         >
+        //             <h2>{order.product}</h2><p>Price:{order.price}</p><h2>date:{order.date}</h2><button onClick={() => {
+        //                 deleteProduct(order._id)
+        //             }}>Delete</button>
+        //             <h2>{(order.price && !order.paid) && <Link to={`/payment/${order._id}`}><button> Please Pay</button></Link>}
 
-                        {(order.price && order.paid) && <span>Paid</span>}
+        //                 {(order.price && order.paid) && <span>Paid</span>}
 
-                    </h2>
-                </div>)
-            }
-        </div>
-        // ------------------------//
-        //         <div>
-        //             <div class="card w-96 bg-paith text-primary-content">
-        //   <div class="card-body">
-        //     <h2 class="card-title">Card title!</h2>
-        //     <p>If a dog chews shoes whose shoes does he choose?</p>
-        //     <div class="card-actions justify-end">
-        //       <button class="btn">Buy Now</button>
-        //     </div>
-        //   </div>
+        //             </h2>
+        //         </div>)
+        //     }
         // </div>
-        //         </div>
+        // ------------------------//
+          <div className= 'w-96 mx-auto'>
+            <h2 className='ml-32 mt-4 text-lg italic font-medium text-amber-400'>Your Selected Itimes :-</h2>
+            {
+                 myItem?.map(order => <ShowMyItem
+                    key={order._id}
+                    order={order}
+                    deleteProduct={deleteProduct}
+                >
+                    </ShowMyItem>
+                    )
+            }
+             
+          </div>
     );
 };
 
