@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "technical-products"
-  }
+    "default": "technical-products",
+    "n": "technical-products"
+  },
+  "targets": {},
+  "etags": {}
 }

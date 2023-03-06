@@ -14,7 +14,7 @@ const ShowMyItem = ({ order ,deleteProduct}) => {
 
 
 
-        <div class="card w-72 lg:w-96  bg-base-200 mt-4 text-primary-content">
+        <div class="card w-72 mx-auto lg:w-96  bg-base-200 mt-4 text-primary-content">
             <div class="card-body">
                 <h2 class="card-title">{order.product}</h2>
                 <h3 className='mx-auto'><span className='text-blue-500'>Price: $</span>{order.price}</h3>
