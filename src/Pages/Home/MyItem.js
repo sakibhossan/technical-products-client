@@ -81,7 +81,7 @@ const MyItem = () => {
         //     }
         // </div>
         // ------------------------//
-          <div className= 'w-96 mx-auto'>
+          <div className= 'w-72 lg:w-96 mx-auto'>
             <h2 className=' ml-10 lg:ml-32 mt-4 text-lg italic font-medium text-amber-400'>Your Selected Itimes :-</h2>
             {
                  myItem?.map(order => <ShowMyItem

@@ -1,9 +1,6 @@
-import axios from 'axios';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import React, { useState } from 'react';
-import auth from '../../firebase.init';
-import { useEffect } from 'react';
-import Loading from '../Shared/Loading';
+import React from 'react';
+
+
 
 const ShowMyItem = ({ order ,deleteProduct}) => {
    
@@ -14,7 +11,7 @@ const ShowMyItem = ({ order ,deleteProduct}) => {
 
 
 
-        <div class="card w-72  lg:w-96  bg-base-200 mt-4 text-primary-content">
+        <div class="card   bg-base-200 mt-4 text-primary-content">
             <div class="card-body">
                 <h2 class="card-title">{order.product}</h2>
                 <h3 className='mx-auto'><span className='text-blue-500'>Price: $</span>{order.price}</h3>
