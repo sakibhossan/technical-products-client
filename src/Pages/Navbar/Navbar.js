@@ -33,7 +33,7 @@ const Navbar = () => {
     </>
     return (
        
-        <div class="navbar bg-success sticky top-0 z-[50] ">
+        <div class="navbar w-96 lg:w-full bg-success sticky top-0 z-[50] ">
             <div class="navbar-start">
                 <div class="dropdown">
                     <label tabIndex="0" class="btn btn-ghost lg:hidden">
