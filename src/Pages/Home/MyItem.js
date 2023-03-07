@@ -97,10 +97,10 @@ const MyItem = () => {
          
              
           </div>
-          <div className=' '>
+         
           <Footer></Footer>
 
-          </div>
+          
         </div>
          
     );

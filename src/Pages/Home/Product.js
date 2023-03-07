@@ -11,7 +11,8 @@ const Product = ({product}) => {
        
       
            <div class="card sm:max-w-sm md:max-w-md  lg:max-w-lg  bg-base-100 ">
-        <figure class="px-10 pt-10">
+        <figure>
+          {/* pt-10 */}
           <img 
           style={{height:'400px', width:'300px'}}
           src={img} alt="Shoes" class="rounded-xl" />

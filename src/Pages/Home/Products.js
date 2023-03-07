@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Product from './Product';
 import Loading from '../Shared/Loading';
 
+
 const Products = () => {
    
     const [searchText,setSearchText] = useState('');
@@ -40,8 +41,10 @@ const Products = () => {
 
 
     return (
-         <section>
-              <div class='py-4 '>
+     
+          <section className=''>
+              <div class='mt-10'>
+                {/* mt-10  */}
         <input onChange={handleSearchChanges}  type="text" placeholder="Search for anything..." class="input input-bordered input-success w-full block mx-auto max-w-xs" />
         
 
@@ -49,7 +52,7 @@ const Products = () => {
 
  
 
-             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-12'>
+             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-12 mt-10'>
                
                {
                 
@@ -62,10 +65,14 @@ const Products = () => {
    
                        )
                }
+              
                
            </div>
+          
+       
 
          </section>
+     
        
     );
 };
