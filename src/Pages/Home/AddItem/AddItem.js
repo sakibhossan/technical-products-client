@@ -27,10 +27,10 @@ const AddItem = () => {
         };
        
     return (
-        <div className='w-50 flex mx-auto'>
-        <h2>this is add service</h2>
-        <form className='w-50 mt-6 flex grid grid-cols-1	' onSubmit={handleSubmit(onSubmit)}>
-  <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
+        <div className=' w-72 lg:w-96  mx-auto'>
+        <h2 className="w-64 lg:w-96 ml-10 lg:ml-32 mt-4 text-lg italic font-medium text-amber-400">this is add service</h2>
+        <form className=' grid grid-cols-1 gap-4 ' onSubmit={handleSubmit(onSubmit)}>
+  <input className=' border border-orange-400 border-double rounded-full border-2 px-3 mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
   <textarea className='mb-2' placeholder='Description' {...register("description")} />
   <input className='mb-2' placeholder='Price' type="number" {...register("price")} />
   <input className='mb-2' placeholder='Quantity' type="number" {...register("quantity")} />
