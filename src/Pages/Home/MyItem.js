@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Footer from '../Shared/Footer';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -81,7 +82,8 @@ const MyItem = () => {
         //     }
         // </div>
         // ------------------------//
-          <div className= 'w-72 lg:w-96 mx-auto'>
+        <div>
+              <div className= 'w-72 lg:w-96 mx-auto'>
             <h2 className='w-64 lg:w-96 ml-10 lg:ml-32 mt-4 text-lg italic font-medium text-amber-400'>Your Selected Itimes :-</h2>
             {
                  myItem?.map(order => <ShowMyItem
@@ -92,8 +94,15 @@ const MyItem = () => {
                     </ShowMyItem>
                     )
             }
+         
              
           </div>
+          <div className='mt-8 mb-4 pl-16'>
+          <Footer></Footer>
+
+          </div>
+        </div>
+         
     );
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 
 
 
+
 const ShowMyItem = ({ order ,deleteProduct}) => {
    
 
@@ -11,7 +12,8 @@ const ShowMyItem = ({ order ,deleteProduct}) => {
 
 
 
-        <div class="card   bg-base-200 mt-4 text-primary-content">
+     
+           <div class="card   bg-base-200 mt-4 text-primary-content">
             <div class="card-body">
                 <h2 class="card-title">{order.product}</h2>
                 <h3 className='mx-auto'><span className='text-blue-500'>Price: $</span>{order.price}</h3>
@@ -28,7 +30,9 @@ const ShowMyItem = ({ order ,deleteProduct}) => {
                     </div>
                 </div>
             </div>
+            
         </div>
+     
 
 
     );
