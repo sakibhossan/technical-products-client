@@ -97,7 +97,7 @@ const MyItem = () => {
          
              
           </div>
-          <div className='mt-8 mb-4 pl-16'>
+          <div className=' '>
           <Footer></Footer>
 
           </div>
