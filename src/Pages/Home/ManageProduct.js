@@ -4,15 +4,22 @@ import useManageProduct from '../../hooks/useManageProduct';
 
 
 
+
+
 const ManageProduct = () => {
     
   
    
     const [product, setProduct] = useManageProduct();
    
+
+
+    
+   
    
    
      
+       
         const deleteProduct =id =>{
             
             console.log(id);
@@ -37,8 +44,9 @@ const ManageProduct = () => {
                      })
                      }
         }
-        
-    
+       
+      
+   
     
     return (
         <div>
