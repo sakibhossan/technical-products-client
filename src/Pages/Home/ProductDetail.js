@@ -15,31 +15,29 @@ const ProductDetail = () => {
     return (
 
 
-        <div className='mt-4 ' >
+     
 
 
-            <form className='w-24 md:w-80 lg:w-96  flex flex-col mx-auto justify-items-center' onSubmit={handleSubmit(onSubmit)}>
+            <form className='w-96   mx-auto  mt-4' onSubmit={handleSubmit(onSubmit)}>
 
-                <input className='mt-2 h-64  rounded ring ring-lime-500' src={img} style={{ border: '2px solid red' }} type="image" alt='' {...register("image")} />
-
-
-                <textarea className='mt-4  text-lg   h-24 rounded' value={name} style={{ border: '2px solid green' }}  {...register("name", { required: true, maxLength: 20 })} />
+                <input className= 'w-80 lg:w-96 mt-2   rounded ring ring-lime-500' src={img} style={{ border: '2px solid red' }} type="image" alt='' {...register("image")} />
 
 
-                <input className='mt-2 pl-6 lg:px-16 lg:mx-24 lg:w-48  text-lg text-blue-500 rounded ring ring-green-500' value={price} style={{ border: '2px solid red' }} {...register("lastName")} />
+                <textarea className='w-56 lg:w-72 px-10 mx-10 mt-4 text-lg  lg:text-xl  py-2    rounded' value={name} style={{ border: '2px solid green' }}  {...register("name", { required: true, maxLength: 20 })} />
 
 
-                <Link to={`/checkout/${productId}`}><button class="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... lg:mx-24 lg:w-48 mt-6 text-black">Place Order</button></Link>
+                <input className='w-32 mx-24 mt-2 px-12  text-lg text-blue-500 rounded ring ring-green-500' value={price} style={{ border: '2px solid red' }} {...register("lastName")} />
+
+                <br />
+                <Link to={`/checkout/${productId}`}><button class="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... w-32 mx-24   mt-6 text-black">Place Order</button></Link>
 
             </form>
 
 
 
 
-            {/* <div className='w-96 lg:mx-24 mx-auto'>
-    
-         </div> */}
-        </div>
+         
+        
     );
 };
 

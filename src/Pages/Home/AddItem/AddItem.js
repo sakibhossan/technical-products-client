@@ -36,7 +36,7 @@ const AddItem = () => {
   <input className='border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' placeholder='Quantity' type="number" {...register("quantity")} />
   <input className='border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' placeholder='PhotoURL' type="text" {...register("img")} />
   <input className='border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' placeholder='Supplier Name' type="text" {...register("supplier")} />
-  <input className= "w-36 mx-auto text-white text-xl border-2 border-blue-200 rounded-full  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...  px-3 py-3 mb-2" type="submit" value="Add Service" />
+  <input className= "w-36 mx-auto text-white text-xl border-2 border-blue-200 rounded-full  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...  px-3 py-3 mb-4" type="submit" value="Add Service" />
 </form>
     </div>
     );
