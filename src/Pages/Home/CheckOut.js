@@ -72,24 +72,24 @@ const CheckOut = (props) => {
     
     </div>
            <div className=''>
-        <h2 className='text-xl italic font-medium text-amber-400'>Your choice Order</h2>
-        <form className='mt-4 w-72 lg:w-96' onSubmit={handleOrder}>
-            <input className='border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' value={formattedDate} type="text" name="name" required readOnly disabled/>
+        <h2 className='text-xl italic font-medium text-amber-400 mt-8 lg:mt-0 px-8'>Your choice Order</h2>
+        <form className='mt-4' onSubmit={handleOrder}>
+            <input className=' w-72 border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' value={formattedDate} type="text" name="name" required readOnly disabled/>
             <br />
-            <input className='border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' value={user?.displayName} type="text" name="name" placeholder='Your order name' required readOnly disabled/>
+            <input className='w-72 border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' value={user?.displayName} type="text" name="name" placeholder='Your order name' required readOnly disabled/>
             <br />
-            <input className='border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' value={user?.email} type="email" name="email" placeholder='Your email'  required readOnly  />
+            <input className='w-72 border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' value={user?.email} type="email" name="email" placeholder='Your email'  required readOnly  />
             <br />
-            <textarea className='border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' value={products.name} type="text" name="Product" placeholder='Your order name' required  readOnly/>
+            <textarea className='w-72 border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' value={products.name} type="text" name="Product" placeholder='Your order name' required  readOnly/>
             <br />
             
-            <input className='border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2'$ value={products.price} type="text" name="Price"required  readOnly/>
+            <input className='w-72 border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2'$ value={products.price} type="text" name="Price"required  readOnly/>
             <br />
-            <input className='border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' type="address" name="address" placeholder='Your Address'  required  />
+            <input className=' w-72 border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2 ' type="address" name="address" placeholder='Your Address'  required  />
             <br />
-            <input className='border-2  border-orange-400 border-double rounded-full px-3 py-3 mb-2' type="phone" name="phone" placeholder='Your Phone Number' required   />
+            <input className= ' w-72 border-2  border-orange-400 border-double rounded-full px-3 py-3 ' type="phone" name="phone" placeholder='Your Phone Number' required   />
             <br />
-            <input className='btn btn-dark ms-5' type="submit" value="Please Order" />
+            <input className='w-36 mx-auto text-white text-xl border-2 border-blue-200 rounded-full  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...  px-3 py-3 ml-16 mt-4 mb-4' type="submit" value="Place Order" />
         </form>
        <ToastContainer></ToastContainer>
     </div>
