@@ -2,7 +2,7 @@ import React from 'react';
 
 const ManageProductDetail = ({product,deleteProduct}) => {
     return (
-        <div class="card w-96 bg-base-200 shadow-xl mt-4">
+        <div class="card  bg-base-200 shadow-xl mt-4">
         <figure class="px-10 pt-10">
           <img src={product.img} alt="Shoes" class="rounded-xl" />
         </figure>

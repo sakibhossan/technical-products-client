@@ -18,7 +18,7 @@ const ProductDetail = () => {
      
 
 
-            <form className='w-96   mx-auto  mt-4' onSubmit={handleSubmit(onSubmit)}>
+            <form className=' w-72 lg:w-96   mx-auto  mt-4' onSubmit={handleSubmit(onSubmit)}>
 
                 <input className= 'w-80 lg:w-96 mt-2   rounded ring ring-lime-500' src={img} style={{ border: '2px solid red' }} type="image" alt='' {...register("image")} />
 
