@@ -1,5 +1,6 @@
 import React from 'react';
 import useManageProduct from '../../hooks/useManageProduct';
+import ManageProductDetail from './ManageProductDetail';
 
 
 
@@ -49,15 +50,17 @@ const ManageProduct = () => {
    
     
     return (
-        <div>
-            <h2>this manage</h2>
+        <div className=' w-72 lg:w-96 mx-auto mt-4'>
+            <h2 className=' px-12 mt-4 text-lg italic font-medium text-amber-400  '>You can be Manage all Product :-</h2>
             {
-                product.map(product => <div
+                product.map(product => <ManageProductDetail
                 key={product._id}
+                product={product}
+                deleteProduct={deleteProduct}
                 
                 >
-<h4>{product.name} <button onClick={()=>deleteProduct(product._id)}>Delete</button></h4>
-</div>)
+{/* <h4>{product.name} <button onClick={()=>deleteProduct(product._id)}>Delete</button></h4> */}
+</ManageProductDetail>)
             }
         </div>
     );
