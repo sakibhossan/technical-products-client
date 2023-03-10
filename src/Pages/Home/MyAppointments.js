@@ -13,10 +13,10 @@ const MyAppointments = () => {
             })
     }, [])
     return (
-        <div class="overflow-x-auto">
-            <table class="table table-compact w-full">
-                <thead>
-                    <tr>
+        <div class="overflow-x-auto  ">
+            <table class="table table-compact w-96 ">
+                <thead className='border-2 border-orange-600'>
+                    <tr className='text-purple-500 '>
                         <th></th>
                         <th>Email</th>
                         <th>Date</th>
@@ -26,10 +26,10 @@ const MyAppointments = () => {
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className=''>
                     {
                         appoinment.map((a,index) =>
-                            <tr>
+                            <tr className='border-2 border-orange-600 py-10 text-6xl font-medium'>
                                 <th>{index + 1}</th>
                                 <td>{a.email}</td>
                                 <td>{a.date}</td>

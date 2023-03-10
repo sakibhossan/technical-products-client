@@ -28,7 +28,7 @@ const Payment = () => {
         <div class="card-body">
           <h2 class="card-title">Your Payment</h2>
           <p>Please your payment is book!</p>
-          <span> {data.price}</span>
+          <span>$ {data.price}</span>
           
         </div>
       </div>

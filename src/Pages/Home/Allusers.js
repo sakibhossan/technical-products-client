@@ -14,18 +14,18 @@ const Allusers = () => {
         return <Loading></Loading>
     }
     return (
-        <div class="overflow-x-auto">
-        <table class="table w-full">
+        <div class="overflow-x-auto ">
+        <table class="table w-96 mx-auto ">
           {/* <!-- head --> */}
           <thead>
-            <tr>
+            <tr className='text-purple-400 border-2 border-orange-400'>
               <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Email</th>
+              <th>Make Admin</th>
+              <th>Remove User</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             {/* <!-- row 1 --> */}
          {
             users.map((row,index) =><AllUserRow

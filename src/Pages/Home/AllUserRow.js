@@ -30,11 +30,11 @@ const AllUserRow = ({row,refetch}) => {
     }
     return (
         
-            <tr>
+            <tr className='border-2 border-orange-400'>
                 <th>{1}</th>
                 <td>{email}</td>
-                <td>{ role !== 'admin' &&<button onClick={makeAdmin} class="btn">Make Admin</button>}</td>
-                <td><button class="btn">Remove User</button></td>
+                <td>{ role !== 'admin' &&<button onClick={makeAdmin} className=" btn bg-gradient-to-r  from-pink-500 to-yellow-500 ...hover:from-green-400 hover:to-blue-500">Make Admin</button>}</td>
+                <td><button class="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">Remove User</button></td>
                 <ToastContainer></ToastContainer>
             </tr>
             
