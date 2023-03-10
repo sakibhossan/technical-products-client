@@ -23,16 +23,16 @@ const Payment = () => {
            return <Loading></Loading>
         }
     return (
-     <div>
-           <div class="card w-96 bg-base-100 shadow-xl">
+     <div className='w-80 lg:w-96 mx-auto '>
+           <div class="card bg-base-100 shadow-xl">
         <div class="card-body">
           <h2 class="card-title">Your Payment</h2>
           <p>Please your payment is book!</p>
-          <span>{data.price}</span>
+          <span> {data.price}</span>
           
         </div>
       </div>
-           <div class="card mt-6 w-96 bg-base-100 shadow-xl">
+           <div class="card mt-6  bg-base-100 shadow-xl">
         <div class="card-body">
         <Elements stripe={stripePromise}>
       <CheckoutForm data={data}  />

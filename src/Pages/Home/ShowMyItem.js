@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,7 +27,9 @@ const ShowMyItem = ({ order ,deleteProduct}) => {
 
                     </div>
                     <div class="card-actions ">
-                        <button class=" btn bg-gradient-to-r  from-pink-500 to-yellow-500 ...hover:from-green-400 hover:to-blue-500">Please Pay</button>
+                        
+                        {(order.price && !order.paid) && <Link to={`/payment/${order._id}`}><button class=" btn bg-gradient-to-r  from-pink-500 to-yellow-500 ...hover:from-green-400 hover:to-blue-500">Please Pay</button></Link>}
+                        {(order.price && order.paid) && <span>Paid</span>}
                     </div>
                 </div>
             </div>
