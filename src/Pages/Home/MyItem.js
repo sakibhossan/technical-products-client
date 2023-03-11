@@ -64,24 +64,7 @@ const MyItem = () => {
 
 
     return (
-        // <div>
-        //     {
-
-        //         myItem?.map(order => <div
-        //             key={order._id}
-        //         >
-        //             <h2>{order.product}</h2><p>Price:{order.price}</p><h2>date:{order.date}</h2><button onClick={() => {
-        //                 deleteProduct(order._id)
-        //             }}>Delete</button>
-        //             <h2>{(order.price && !order.paid) && <Link to={`/payment/${order._id}`}><button> Please Pay</button></Link>}
-
-        //                 {(order.price && order.paid) && <span>Paid</span>}
-
-        //             </h2>
-        //         </div>)
-        //     }
-        // </div>
-        // ------------------------//
+      
         <div>
               <div className= 'w-72 lg:w-96 mx-auto'>
             <h2 className='w-64 lg:w-96 ml-10 lg:ml-32 mt-4 text-lg italic font-medium text-amber-400'>Your Selected Itimes :-</h2>

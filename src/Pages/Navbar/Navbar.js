@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import logo from '../../../src/images/logo.png'
 
 const Navbar = () => {
 
@@ -14,7 +15,7 @@ const Navbar = () => {
     };
 
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>
+        <li><Link  to='/'>Home</Link></li>
         <li><Link to='/myItem'>MyItem</Link></li>
         
         <li><Link to='/additem'>Add Items</Link></li>
@@ -24,8 +25,8 @@ const Navbar = () => {
             user && <Link to='/dashboard'>Dashboard</Link>
             }</li>
         
-        <li><Link to='/myprofile'>My Profile</Link></li>
-           <li>{user ? <button class="btn btn-ghost"
+        <li ><Link to='/myprofile'>My Profile</Link></li>
+           <li>{user ? <button className="btn btn-ghost "
            onClick={logOut}
            >SignOut</button> :<Link to='/login'>Login</Link>}</li>
             
@@ -34,7 +35,7 @@ const Navbar = () => {
     return (
        
         <div class="navbar  bg-success sticky top-0 z-[50] ">
-            <div class="navbar-start">
+            <div class="navbar-start ">
                 <div class="dropdown">
                     <label tabIndex="0" class="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -46,7 +47,13 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <a class="btn btn-ghost normal-case text-xl"><Link to='/'>Technical Products</Link></a>
+                <a class="btn btn-ghost normal-case text-xl  ">
+                    
+                    <Link  to='/'> <div className='flex space-x-2 ...'>
+                    <img   style={{height:'30px',width:'30px'  }} src={logo} alt="" /><p>Technical Products</p>
+                        </div></Link>
+                    
+                </a>
             </div>
             <div class="navbar-center hidden lg:flex ">
                 <ul class="menu menu-horizontal p-0">

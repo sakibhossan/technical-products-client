@@ -18,8 +18,10 @@ const Products = () => {
     
     useEffect(()=>{
         fetch('https://technical-backend-code.vercel.app/products/')
+       
         .then(res =>res.json())
         .then(data => {
+         
             const matchResult = data.filter(d => d.name.toLowerCase().includes(searchText.toLowerCase()));
             setSearchResult(matchResult);
             setLoading(false);
