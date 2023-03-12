@@ -2,8 +2,8 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <section className='lg:flex justify-center gap-96'>
-            <div className='w-96 mt-20 text-2xl font-medium mb-4 'data-aos="flip-left"
+        <section className='lg:flex justify-center gap-96 pl-11'>
+            <div className='w-72  lg:w-96 mt-20 text-xl lg:text-2xl font-medium mb-4 'data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
                 <h2>

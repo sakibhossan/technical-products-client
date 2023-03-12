@@ -46,7 +46,7 @@ const Products = () => {
      
           <section className=''>
            
-      <div class="card bg-green-400 w-full mx-auto  lg:mx-28 h-40 mt-10 shadow-xl">
+      <div class="card bg-green-400   mx-auto  lg:mx-28 h-40 mt-10 shadow-xl">
   <div class="card-body">
   <input onChange={handleSearchChanges}  type="text" placeholder="Search for anything..." class="input input-bordered input-success w-full my-6 block mx-auto max-w-xs" />
   </div>
