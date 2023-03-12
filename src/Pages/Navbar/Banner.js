@@ -12,7 +12,7 @@ const Banner = () => {
             </div>
     
             <div>
-           <div class="h-96 w-80 mt-20    carousel carousel-vertical rounded-box" data-aos="flip-left"
+           <div class="h-96  w-60 lg:w-80 mt-20    carousel carousel-vertical rounded-box" data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
         <div class="carousel-item h-full">
