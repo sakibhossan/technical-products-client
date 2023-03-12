@@ -10,12 +10,17 @@ const Product = ({product}) => {
     return (
        
       
-           <div class="card sm:max-w-sm md:max-w-md  lg:max-w-lg  bg-base-100 ">
-        <figure>
+           <div class="card sm:max-w-sm md:max-w-md  lg:max-w-lg  bg-base-100  ">
+        <figure className='hover:bg-amber-100 '>
           {/* pt-10 */}
           <img 
           style={{height:'400px', width:'300px'}}
-          src={img} alt="Shoes" class="rounded-xl" />
+          src={img} alt="Shoes" class=" rounded-xl" data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+        
+         
+          />
         </figure>
         <div class="card-body items-center text-center">
           <h2 class="card-title">{name}</h2>

@@ -45,16 +45,16 @@ const Products = () => {
     return (
      
           <section className=''>
-              <div class='mt-10'>
-                {/* mt-10  */}
-        <input onChange={handleSearchChanges}  type="text" placeholder="Search for anything..." class="input input-bordered input-success w-full block mx-auto max-w-xs" />
-        
-
-      </div>
+           
+      <div class="card bg-green-400 w-full mx-auto  lg:mx-28 h-40 mt-10 shadow-xl">
+  <div class="card-body">
+  <input onChange={handleSearchChanges}  type="text" placeholder="Search for anything..." class="input input-bordered input-success w-full my-6 block mx-auto max-w-xs" />
+  </div>
+</div>
 
  
 
-             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-12 mt-10'>
+             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-12 mt-12'>
                
                {
                 

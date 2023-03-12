@@ -50,7 +50,9 @@ const ManageProduct = () => {
    
     
     return (
-        <div className=' w-72 lg:w-96 mx-auto mt-4'>
+        <div className=' w-72 lg:w-96 mx-auto mt-4'  data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
             <h2 className=' px-12 mt-4 text-lg italic font-medium text-amber-400  '>You can be Manage all Product :-</h2>
             {
                 product.map(product => <ManageProductDetail
