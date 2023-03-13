@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
 import Loading from '../Shared/Loading';
+import TextAnimation from './TextAnimation';
 
 
 const Products = () => {
@@ -52,7 +53,9 @@ const Products = () => {
   </div>
 </div>
 
- 
+<div className='mt-10 px-5 lg:px-96'>
+<TextAnimation ></TextAnimation>
+</div>
 
              <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-12 mt-12'>
                
