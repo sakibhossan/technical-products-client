@@ -11,7 +11,7 @@ const Product = ({product}) => {
        
       
            <div class="card sm:max-w-sm md:max-w-md  lg:max-w-lg  bg-base-100  ">
-        <figure className='hover:bg-amber-100 '>
+        <figure className=''>
           {/* pt-10 */}
           <img 
           style={{height:'400px', width:'300px'}}

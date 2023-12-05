@@ -22,6 +22,8 @@ const Products = () => {
        
         .then(res =>res.json())
         .then(data => {
+            
+            
          
             const matchResult = data.filter(d => d.name.toLowerCase().includes(searchText.toLowerCase()));
             setSearchResult(matchResult);

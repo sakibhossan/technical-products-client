@@ -34,7 +34,7 @@ const CheckOut = (props) => {
             const {data} = res;
             console.log(data);
             if(data.success){
-                toast(`appointent is set,${formattedDate}`)
+                toast(`This product is set Your Order Cart,${formattedDate}`)
             }
 
             else if(data.insertedId){
@@ -43,7 +43,7 @@ const CheckOut = (props) => {
                 event.target.reset();
             }
             else{
-                toast.error(`appointent is set,${data.order?.date}`);
+                toast.error(`Already this product is set,${data.order?.date}`);
             }
             
 
